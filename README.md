@@ -70,7 +70,7 @@ Pour la suite des instructions je conseille aux utilisateurs de Windows d'utilis
 
     ```python manage.py runserver```
 
-6. **Utilisation de l'application**
+## Utilisation de l'application
 
 1. Se connecter ou s'inscrire en utilisant les liens fournis sur la page d'accueil.
 
