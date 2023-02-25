@@ -38,7 +38,7 @@ Pour la suite des instructions je conseille aux utilisateurs de Windows d'utilis
 
     Copier le programme source:
 
-    ```git clone https://github.com/Lockco/Open-Classrooms-Projet-4```
+    ```git clone https://github.com/Lockco/Open-Classrooms-Projet-9```
     
 2. **Creer un environnement virtuel.**
 
