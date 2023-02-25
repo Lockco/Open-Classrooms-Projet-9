@@ -10,9 +10,11 @@ Actuellement voici les fonctionnalités du programme :
 
 3. Affichage des tickets et critiques de l'utilisateur connecté
 
-4. Possibilité de suivre d'autres utilisateurs
+4. Possibilité de créer une critique et/ou un ticket
 
-5. Affichage et gestion des tickets et critiques soumis par l'utilisateur
+5. Possibilité de suivre d'autres utilisateurs
+
+6. Affichage et gestion des tickets et critiques soumis par l'utilisateur
 
 ## Pré-requis 
 
