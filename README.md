@@ -1,6 +1,6 @@
 # Open-Classrooms-Projet-9_Loïc
 
-Ce projet OpenClassrooms a été créé dans le cadre du 9ème projet de formation. Il s'agit d'une application permettant de demander et de publier des critiques de livres et d'articles.
+Ce projet OpenClassrooms a été créé dans le cadre du 9ème projet de formation. Il s'agit d'une application permettant à une communauté d'utilisateurs de consulter ou de solliciter une critique de livres à la demande.
 
 Actuellement voici les fonctionnalités du programme : 
 
