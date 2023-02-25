@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import "style.css";
+
+
+body {
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+  }
+
+nav ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+
+nav li {
+float: right;
+}
+
+nav a {
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+nav a:hover {
+background-color: #111;
+color: aliceblue;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+.post {
+  padding: 1em;
+  border: 1px solid #ccc;
+  margin-bottom: 1em;
+  box-shadow: 2px 2px 5px #ccc;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.post-header img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.post-content {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h2.post-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+p.post-subtitle {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.resize-image {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+
+.book-review{
+    display: flex;
+}
+
+.book-description{
+  display: flex;
+  float: right;
+  text-align: justify;
+  padding: 1rem;
+}
+.rating {
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.rating i {
+  font-size: 1.5em;
+  color: orange;
+}
+
+.rating span {
+  margin-left: 0.5em;
+}
+
+.fas.fa-star {
+color: yellow;
+}
+
+.far.fa-star {
+color: gray;
+}
+
+.button-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-top: 40px;
+}
+
+button.btn-edit-review,
+button.btn-create-review,
+button.btn-reply
+{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button.btn-edit-review:hover,
+button.btn-create-review:hover,
+button.btn-reply
+{
+background-color: #000000;
+color: #fff;
+}
+
+button.btn-edit-review,
+button.btn-reply
+{
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000000;
+}
+
+button.btn-create-review {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000000;
+}
+
+button.btn-reply{
+    margin-top : 12px;
+}
+
+.btn-update-ticket{
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    margin-left: 7rem;
+}
+
+.btn-update-review{
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+.form-control {
+  font-size: 15px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.star-btn {
+  background-color: transparent;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 2em;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.star-btn:hover,
+.star-btn:focus {
+  color: #ffc107;
+}
+
+.star-btn.selected {
+  color: #ffc107;
+}
+
+
+
+.login-form {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-profile {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.form-signup {
+  max-width: 400px;
+  margin: auto;
+}
+
+.card {
+  margin-top: 30px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.has-error input {
+  border-color: red;
+}
+
+.has-error .help-block {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.follow-page {
+  margin-top: 50px;
+}
+
+.post-content {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.has-error input {
+  border-color: red;
+}
+
+.has-error .help-block {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-top: 1px solid #dee2e6;
+  padding: 12px;
+}
+
+.list-group-item:first-child {
+  border-top: none;
+}
+
+.float-end {
+  float: right;
+}
+
+.follow-page h5 {
+  margin-top: 30px;
+}
+
+.form-control {
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control-description {
+  height: 200px;
+}
+
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.container-no-post{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-top: 40px;
+}
+
+.ui-autocomplete {
+  background-color: #ffffff !important;
+  border: 1px solid #dddddd !important;
+  font-size: 14px !important;
+  border-radius: 5px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.ui-autocomplete-item {
+  padding: 10px !important;
+  border-bottom: 1px solid #dddddd !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.ui-autocomplete-item:last-child {
+  border-bottom: none !important;
+}
+
+.ui-autocomplete-item:hover {
+  background-color: #dddddd !important;
+  cursor: pointer !important;
+}
+
+.ui-helper-hidden-accessible {
+  display: none !important;
+}
+
+.ui-menu-item-wrapper{
+    padding: 10px !important;
+    border-bottom: 1px solid #dddddd !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+}
+
+.ui-menu-item-wrapper:last-child{
+    border-bottom: none !important;
+}
+
+.ui-menu-item-wrapper:hover{
+    background-color: #dddddd !important;
+}
+

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+
+{% block title %}
+    <title>Suivre d'autres utilisateurs</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card mt-4">
+          <div class="card-header">
+            <h5>Suivre d'autres utilisateurs</h5>
+          </div>
+          <div class="card-body">
+            <form method="post">
+              {% csrf_token %}
+              {% for field in form %}
+                <div class="form-group {% if field.errors %}has-error{% endif %}">
+                  {{ field.label_tag }}
+                  {{ field|add_class:"form-control" }}
+                  {% for error in field.errors %}
+                    <div class="invalid-feedback">{{ error }}</div>
+                  {% endfor %}
+                </div>
+              {% endfor %}
+
+              <button type="submit" class="btn btn-primary">S'abonner</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="card mt-4">
+          <div class="card-header">
+            <h5>Abonnements</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            {% for user in followed_users %}
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ user.username }}
+                <a href="{% url 'followers:unfollow' user.id %}">Se désabonner</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="card mt-4">
+          <div class="card-header">
+            <h5>Abonnés</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            {% for user in follow_by %}
+              <li class="list-group-item">{{ user.user }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

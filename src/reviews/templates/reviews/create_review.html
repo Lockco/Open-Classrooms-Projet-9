@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+
+{% block content %}
+  <h2>Créer une review</h2>
+  <div class="container">
+    <div class="post">
+        <div class="post-content">
+            <div class="btn-update-review">
+             <form method="post" enctype="multipart/form-data" id="review-form">
+                {% csrf_token %}
+                <div class="form-group">
+                  {{ form.headline.label_tag }}
+                  {{ form.headline|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                  {{ form.body.label_tag }}
+                  {{ form.body|add_class:"form-control form-control-description" }}
+                </div>
+                <div class="star-rating">
+                  <button type="button" class="star-btn" data-rating="1"><i class="fa fa-star"></i></button>
+                  <button type="button" class="star-btn" data-rating="2"><i class="fa fa-star"></i></button>
+                  <button type="button" class="star-btn" data-rating="3"><i class="fa fa-star"></i></button>
+                  <button type="button" class="star-btn" data-rating="4"><i class="fa fa-star"></i></button>
+                  <button type="button" class="star-btn" data-rating="5"><i class="fa fa-star"></i></button>
+                  <input type="hidden" name="rating" value="0">
+                </div>
+              <div class="form-group">
+              {{ form.image.label_tag }}
+              {{ form.image|add_class:"form-control-file" }}
+              </div>
+                <input type="submit" value="Créer">
+              </form>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}
