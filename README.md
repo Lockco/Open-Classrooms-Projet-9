@@ -88,7 +88,9 @@ Pour la suite des instructions je conseille aux utilisateurs de Windows d'utilis
 
 ## Logiciel utilisé
 [PyCharm] (https://www.jetbrains.com/fr-fr/pycharm/)
+
 [Visual Studio Code] (https://code.visualstudio.com/download)
+
 [gitbash] (https://git-scm.com/downloads)
 
 ## Remerciements
