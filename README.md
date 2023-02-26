@@ -76,7 +76,7 @@ Pour la suite des instructions je conseille aux utilisateurs de Windows d'utilis
 
 2. Consultez les tickets et les critiques des utilisateurs que vous suivez sur votre flux.
 
-3. Ajoutez des utilisateurs à votre liste de suivi en entrant simplement leur nom d'utilisateur dans la zone de texte dédiée qui est situé dans l'onglet 'Abonnement'.
+3. Ajoutez des utilisateurs à votre liste de suivi en entrant simplement leur nom d'utilisateur dans la zone de texte dédiée qui est située dans l'onglet 'Abonnement'.
 
 4. Consulter la page qui liste tous les utilisateurs que vous suivez, avec l'option de dépliage pour arrêter de suivre un utilisateur donné dans l'onglet 'Abonnement'.
 
