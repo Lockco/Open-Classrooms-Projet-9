@@ -55,7 +55,10 @@ Pour la suite des instructions je conseille aux utilisateurs de Windows d'utilis
     Attention : pour éviter de rencontrer des problème avec ```pip``` veillez à vérifier que PYTHONPATH soit correctement configurées : 
     ([PYTHONPATH](https://datatofish.com/add-python-to-windows-path/))
     
-    L'installation des paquets se fait en exécutant la commande suivante : ```python pip install -r requirements.txt```
+    L'installation des paquets se fait en exécutant la commande suivante : 
+```py 
+pip install -r requirements.txt
+```
     
 5. **Lancement du programme**
 
