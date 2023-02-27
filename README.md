@@ -72,7 +72,7 @@ Pour la suite des instructions je conseille aux utilisateurs de Windows d'utilis
 
 ## Utilisation de l'application
 
-1. Se connecter ou s'inscrire en utilisant les liens fournis sur la page d'accueil. N'ayant pas de compte nous vous invitons à créer votre compte. Des utilisateurs sont présents dans la base pour que vous puissiez utiliser l'onglet "Abonnements" voici la liste des utilisateurs présents : Benjamin, Claire, Julien, Luc. 
+1. Se connecter ou s'inscrire en utilisant les liens fournis sur la page d'accueil. N'ayant pas de compte nous vous invitons à créer votre compte. Des utilisateurs sont présents dans la base pour que vous puissiez utiliser l'onglet "Abonnements" voici la liste des utilisateurs présents : Benjamin, Claire, Julien, Luc, Lolyta. 
 
 2. Consultez les tickets et les critiques des utilisateurs que vous suivez sur votre flux.
 
