@@ -20,8 +20,8 @@
   <ul>
 
       {% if request.user.is_authenticated %}
-      <li><a href="{% url 'followers:logout' %}">déconnexion</a></li>
-      <li><a href="{% url 'followers:profile' %}">bonjour {{ user.username }}</a></li>
+      <li><a href="{% url 'followers:logout' %}">Deconnexion</a></li>
+      <li><a href="{% url 'followers:profile' %}">Bonjour {{ user.username }}</a></li>
       {% else %}
       <li><a href="{% url 'followers:login' %}">Se connecter</a></li>
       {% endif %}
