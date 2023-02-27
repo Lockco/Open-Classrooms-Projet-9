@@ -5,9 +5,9 @@
   <div class="post">
     <div class="post-header">
       <img class="post-avatar" src="https://static.vecteezy.com/ti/vecteur-libre/t2/2002403-homme-avec-barbe-avatar-personnage-icone-isole-gratuit-vectoriel.jpg" alt="Avatar">
-      <div class="post-header-text">
-        <p class="post-header-username">Critique publié par <i>{{ post.user }}</i> le {{ post.time_created|date:'j F Y à H:i' }}</p>
-      </div>
+    <div class="post-header-text">
+      <h5>Critique publié par <i><strong>{{ post.user }}</strong></i> le {{ post.time_created|date:'j F Y à H:i' }}</h5>
+    </div>
     </div>
 				<!-- Critiques -->
 				<div class="post-content">
@@ -52,7 +52,7 @@
               <div class="post-header">
                 <img class="post-avatar" src="https://static.vecteezy.com/ti/vecteur-libre/t2/2002403-homme-avec-barbe-avatar-personnage-icone-isole-gratuit-vectoriel.jpg"alt="Avatar">
                 <div class="post-header-text">
-                  <h5><i>En réponse au ticket demandé par {{ post.user }}</i> <i>le {{ post.time_created|date:'j F Y à H:i' }}</i></h5>
+                  <h5><i>En réponse au ticket demandé par <strong>{{ post.user }}</strong></i> <i>le {{ post.time_created|date:'j F Y à H:i' }}</i></h5>
                 </div>
               </div>
               <div class="rating">

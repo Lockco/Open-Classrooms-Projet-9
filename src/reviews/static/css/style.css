@@ -61,6 +61,10 @@ color: aliceblue;
   margin-right: 1em;
 }
 
+.post-header-text p{
+  font-size: 1.25rem !important;
+}
+
 .post-content {
   width: 80%;
   margin: 0 auto;
@@ -350,6 +354,8 @@ button.btn-reply{
   font-size: 14px !important;
   border-radius: 5px !important;
   transition: all 0.2s ease-in-out !important;
+  margin: 20px;
+  
 }
 
 .ui-autocomplete-item {

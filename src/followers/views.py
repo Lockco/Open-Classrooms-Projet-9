@@ -102,7 +102,6 @@ def follow_user(request: HttpRequest) -> HttpResponse:
 		form = FollowForm()
 	follows = UserFollows.objects.filter(user=request.user)
 	follow_by = UserFollows.objects.filter(followed_user_id=request.user.id)
-	print(follow_by)
 	followed_users = [follow.followed_user for follow in follows]
 	return render(request, 'followers/follow_form.html',
 	              {'followed_users': followed_users, 'form': form, 'follow_by': follow_by}

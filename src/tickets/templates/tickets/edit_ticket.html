@@ -29,33 +29,4 @@
         </div>
     </div>
   </div>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-  const ratingField = document.querySelector('input[name=rating]');
-  let ratingValue = ratingField.value;
-  const ratingButtons = document.querySelectorAll('.star-btn');
-
-  ratingButtons.forEach(button => {
-    if (button.getAttribute('data-rating') <= ratingValue) {
-      button.querySelector('i.fa-star').classList.add('checked');
-    }
-
-    button.addEventListener('click', () => {
-      const rating = button.getAttribute('data-rating');
-      ratingField.value = rating;
-      ratingValue = rating;
-
-      ratingButtons.forEach(btn => {
-        const starIcon = btn.querySelector('i.fa-star');
-        if (btn.getAttribute('data-rating') <= rating) {
-          starIcon.classList.add('checked');
-        } else {
-          starIcon.classList.remove('checked');
-        }
-      });
-    });
-  });
-});
-</script>
 {% endblock %}

@@ -2,7 +2,7 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from followers.models import UserFollows
 from reviews.models import Review
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from django.contrib.auth.decorators import login_required
 from itertools import chain
 from django.db.models import CharField, Value, Q, QuerySet
@@ -21,7 +21,8 @@ class ReviewCreateForm(forms.ModelForm):
 	headline = forms.CharField(label='Titre', max_length=128, widget=forms.TextInput(attrs={'class': 'form-control'}))
 	body = forms.CharField(label='Description', required=False, widget=forms.Textarea(attrs={'class': 'form-control'}))
 	RATING_CHOICES = [(i, str(i)) for i in range(1, 6)]
-	rating = forms.ChoiceField(label='Note', widget=forms.RadioSelect(attrs={'class': 'rating'}), choices=RATING_CHOICES)
+	rating = forms.ChoiceField(label='Note', widget=forms.RadioSelect(attrs={'class': 'rating'}),
+	                           choices=RATING_CHOICES)
 	image = forms.ImageField(label='Image', required=False)
 
 	class Meta:
@@ -31,7 +32,7 @@ class ReviewCreateForm(forms.ModelForm):
 
 
 @login_required(login_url='followers:login')
-def create_review(request: HttpRequest):
+def create_review(request):
 	"""permet à l'utilisateur de créer une critique en réponse à un ticket existant"""
 
 	if request.method == 'POST':
@@ -58,7 +59,7 @@ def create_review(request: HttpRequest):
 			)
 			review.save()
 			context = {'ticket': ticket, 'review': review}
-			return render(request, 'reviews/feed.html')
+			return redirect('reviews:home')
 	else:
 		form = ReviewCreateForm()
 	return render(request, 'reviews/create_review.html', {'form': form})
@@ -71,6 +72,7 @@ def reply_to_ticket(request: HttpRequest, ticket_id: int) -> HttpResponse:
 	try:
 		ticket = Ticket.objects.get(id=ticket_id)
 	except Ticket.DoesNotExist:
+		print("Le Ticket n'existe pas")
 		return redirect('reviews:home')
 
 	if request.method == 'POST':
@@ -91,7 +93,7 @@ def reply_to_ticket(request: HttpRequest, ticket_id: int) -> HttpResponse:
 
 
 @login_required(login_url='followers:login')
-def get_users_viewable_reviews(request: HttpRequest) -> QuerySet[Review]:
+def get_users_viewable_reviews(request) -> QuerySet[Review]:
 	"""récupère une liste des critiques qui sont visibles pour l'utilisateur connecté."""
 
 	# Récupération des critiques de l'utilisateur connecté
@@ -117,7 +119,7 @@ def get_users_viewable_reviews(request: HttpRequest) -> QuerySet[Review]:
 
 
 @login_required(login_url='followers:login')
-def get_users_viewable_tickets(request: HttpRequest) -> QuerySet[Ticket]:
+def get_users_viewable_tickets(request):
 	"""récupère une liste de tickets qui sont visibles pour l'utilisateur connecté"""
 
 	# Récupération des utilisateurs que l'utilisateur connecté suit
@@ -145,13 +147,12 @@ def feed(request):
 		key=lambda post: post.time_created,
 		reverse=True
 	)
-	print(posts)
 
 	return render(request, 'reviews/feed.html', context={'posts': posts})
 
 
 @login_required(login_url='followers:login')
-def user_posts(request: HttpRequest) -> HttpResponse:
+def user_posts(request):
 	"""affiche une liste de tous les posts (critiques et tickets) créés par l'utilisateur connecté"""
 
 	reviews = Review.objects.filter(user=request.user).order_by('-time_created')
@@ -164,7 +165,7 @@ def user_posts(request: HttpRequest) -> HttpResponse:
 
 
 @login_required(login_url='followers:login')
-def edit_review(request: HttpRequest, review_id: int) -> HttpResponse:
+def edit_review(request, review_id):
 	"""permet à l'utilisateur de modifier une critique existante"""
 
 	review = get_object_or_404(Review, pk=review_id)
@@ -179,7 +180,7 @@ def edit_review(request: HttpRequest, review_id: int) -> HttpResponse:
 
 
 @login_required(login_url='followers:login')
-def delete_review(request: HttpRequest, id: int) -> HttpResponse:
+def delete_review(request, id):
 	"""permet à l'utilisateur de supprimer une critique existante"""
 
 	review = get_object_or_404(Review, pk=id)
@@ -192,7 +193,7 @@ def delete_review(request: HttpRequest, id: int) -> HttpResponse:
 
 
 @login_required(login_url='followers:login')
-def edit_ticket(request: HttpRequest, ticket_id: int) -> HttpResponse:
+def edit_ticket(request, ticket_id):
 	"""permet à l'utilisateur de modifier un ticket existant"""
 
 	ticket = get_object_or_404(Ticket, pk=ticket_id)
@@ -207,7 +208,7 @@ def edit_ticket(request: HttpRequest, ticket_id: int) -> HttpResponse:
 
 
 @login_required(login_url='followers:login')
-def delete_ticket(request: HttpRequest, id: int) -> HttpResponse:
+def delete_ticket(request, id):
 	"""permet à l'utilisateur de supprimer un ticket existant"""
 
 	ticket = get_object_or_404(Ticket, pk=id)

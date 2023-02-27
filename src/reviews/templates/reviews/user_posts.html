@@ -38,21 +38,29 @@
 				<!-- Critiques -->
 				<div class="post-content">
 					<div class="rating">
-                        <div class='review.headline'>
-                            <h2>{{ review.headline }}</h2>
-                                {% if review.rating == 1 %}
-                                  <a>★☆☆☆☆</a>
-                                {% elif review.rating == 2 %}
-                                  <a>★★☆☆☆</a>
-                                {% elif review.rating == 3 %}
-                                  <a>★★★☆☆</a>
-                                {% elif review.rating == 4 %}
-                                  <a>★★★★☆</a>
-                                {% elif review.rating == 5 %}
-                                  <a>★★★★★</a>
-                                {% endif %}
-                                </a>
-                        </div>
+            <div class='review.headline'>
+                <h3>{{ review.headline }} -
+                {% if review.rating == 1 %}
+                ★☆☆☆☆</h3>
+            <a>
+                {% elif review.rating == 2 %}
+                ★★☆☆☆</h3>
+            </a>
+            <a>
+                {% elif review.rating == 3 %}
+                ★★★☆☆</h3>
+            </a>
+            <a>
+                {% elif review.rating == 4 %}
+                ★★★★☆</h3>
+            </a>
+            <a>
+                {% elif review.rating == 5 %}
+                ★★★★★</h3>
+            </a>
+            </div>
+						{% endif %}
+
 					</div>
           <div class="book-review">
               <div class="book-cover">
@@ -96,8 +104,8 @@
                         </div>
                           <div class="book-review">
                               <div class="book-cover">
-                                {% if review.ticket and review.ticket.image %}
-                                  <img src="{{ review.ticket.image.url }}" alt="{{ review.headline }}">
+                                {% if ticket and ticket.image %}
+                                  <img src="{{ ticket.image.url }}" alt="{{ ticket.title }}" class="resize-image">
                                 {% endif %}
                               </div>
                               <div class="book-description">
